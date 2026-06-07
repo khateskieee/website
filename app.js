@@ -196,6 +196,7 @@ const slideColors = [
   'linear-gradient(45deg, #F483C420, var(--color-bg))',
   'radial-gradient(ellipse, #EB6BAD30, var(--color-bg))',
   'linear-gradient(90deg, #F6D9E820, var(--color-bg))',
+  'radial-gradient(circle at top, #F483C435, var(--color-bg))', // Lookbook Slide
   'radial-gradient(circle, #E3168430, var(--color-bg))',
   'linear-gradient(135deg, #F483C430, var(--color-bg))',
   'radial-gradient(ellipse at bottom, #EB6BAD40, var(--color-bg))'
@@ -245,6 +246,112 @@ document.querySelectorAll('.identity-card i, .timeline-item i, .step i, .timelin
 });
 
 // === NEW FEATURES ===
+
+// Lookbook Switching Logic
+const lookbookData = {
+  lana: {
+    title: "Lana Dress",
+    vibe: "Romantic & Sweet",
+    desc: "Unleash your inner romantic with this flowy floral masterpiece. Featuring double-ruffle shoulder straps and a flattering sweetheart neckline, the Lana dress is your go-to for sunny dates and café afternoons.",
+    notes: "Pairs perfectly with woven straw hats, strappy sandals, and a classic tote bag.",
+    img: "images/lana.png",
+    link: "https://shopee.ph"
+  },
+  maren: {
+    title: "Maren with Sleeves",
+    vibe: "Classy & Modest",
+    desc: "A charming white floral dress that offers elegant modesty without compromising on style. The soft puff sleeves, high round neckline, and tiered ruffle hem create a timeless, feminine silhouette.",
+    notes: "Style with minimalist nude heels and dainty gold jewelry for Sunday brunch or outdoor events.",
+    img: "images/maren.png",
+    link: "https://shopee.ph"
+  },
+  maren_sleeveless: {
+    title: "Maren Classic (Sleeveless)",
+    vibe: "Elegant & Checked",
+    desc: "A timeless grid checkered navy dress that is the sleeveless counterpart to our Maren dress. The structured round neck bodice, back-tie bow, and flared midi ruffle hem make it a classic dress for school, cafe, or daily outings.",
+    notes: "Pairs beautifully with nude block heels, a structured beige shoulder bag, and simple silver earrings.",
+    img: "images/maren_sleeveless.png",
+    link: "https://shopee.ph"
+  },
+  poppy: {
+    title: "Poppy Dress",
+    vibe: "Sophisticated Floral",
+    desc: "Capture attention in the Poppy dress, featuring a sophisticated navy and royal blue floral print. Flutter shoulder straps, a square neck bodice, and a gorgeous pleated maxi length combine elegance with absolute comfort.",
+    notes: "Style with slides or leather sandals and a dainty white handbag.",
+    img: "images/poppy.png",
+    link: "https://shopee.ph"
+  },
+  damon: {
+    title: "Damon Two-Piece Set",
+    vibe: "Bold & Statement",
+    desc: "Make a head-turning statement in this fiery crimson ensemble. Combining a halter bandeau top with a dramatic ruffled high-slit skirt, the Damon set is crafted for confidence and festive 'awra' moments.",
+    notes: "Wear with sleek high heels and statement earrings. Perfect for evening parties and beach resort wear.",
+    img: "images/damon.png",
+    link: "https://shopee.ph"
+  },
+  jordyn: {
+    title: "Jordyn Short Sleeve",
+    vibe: "Chic Campus Basic",
+    desc: "Elevate your everyday wardrobe with this sporty-chic navy top. Designed with a sleek zip-up neckline and ribbed detail, it delivers maximum comfort and style for classrooms, library sessions, and coffee runs.",
+    notes: "Matches effortlessly with denim skirts, high-waist jeans, and chunky white sneakers.",
+    img: "images/jordyn.png",
+    link: "https://shopee.ph"
+  },
+  jordyn_longsleeve: {
+    title: "Jordyn Long Sleeve",
+    vibe: "Chic WFH / Streetwear",
+    desc: "The ultimate long-sleeve basic in rich black. With its signature front zip collar, ribbed texture, and body-sculpting fit, it pairs effortlessly for cool weather cafes, campus study-halls, or weekend city walks.",
+    notes: "Looks amazing styled with high-waist loose jeans, chunky white sneakers, and a sporty shoulder bag.",
+    img: "images/jordyn_longsleeve.png",
+    link: "https://shopee.ph"
+  }
+};
+
+const lookbookTabs = document.querySelectorAll('.lookbook-tab');
+const mainImg = document.getElementById('lookbookMainImg');
+const titleEl = document.getElementById('lookbookTitle');
+const vibeEl = document.getElementById('lookbookVibe');
+const descEl = document.getElementById('lookbookDesc');
+const notesEl = document.getElementById('lookbookNotes');
+const shopBtn = document.getElementById('lookbookShopBtn');
+
+lookbookTabs.forEach(tab => {
+  tab.addEventListener('click', () => {
+    const colName = tab.dataset.collection;
+    const data = lookbookData[colName];
+    if (!data) return;
+    
+    // Deactivate current active tab
+    lookbookTabs.forEach(t => t.classList.remove('active'));
+    tab.classList.add('active');
+    
+    // Animate Image transition
+    if (mainImg) {
+      mainImg.style.opacity = '0';
+      mainImg.style.transform = 'scale(0.95)';
+      setTimeout(() => {
+        mainImg.src = data.img;
+        mainImg.alt = `${data.title} Image`;
+        mainImg.style.opacity = '1';
+        mainImg.style.transform = 'scale(1)';
+      }, 300);
+    }
+    
+    // Update Text details with short fade-in effect
+    const details = document.querySelector('.lookbook-details');
+    if (details) {
+      details.style.opacity = '0.7';
+      setTimeout(() => {
+        if (titleEl) titleEl.textContent = data.title;
+        if (vibeEl) vibeEl.textContent = data.vibe;
+        if (descEl) descEl.textContent = data.desc;
+        if (notesEl) notesEl.textContent = data.notes;
+        if (shopBtn) shopBtn.href = data.link;
+        details.style.opacity = '1';
+      }, 150);
+    }
+  });
+});
 
 // 1. Interactive Roadmap Timeline
 const roadmapContainer = document.getElementById('roadmapTimeline');

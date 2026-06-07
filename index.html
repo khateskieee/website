@@ -43,8 +43,11 @@
           <p class="text-lg leading-normal mb-sm">But growth needed something more—something catchy, easy to remember, and true to the spirit of the brand. That's when <strong>Maartie Clothing</strong> was born. Inspired by the word <em>maarte</em>, often seen negatively, we turned it into something powerful: confidence, self-care, and fashion.</p>
           <p class="text-lg leading-normal">Maartie is like Barbie—confident, fashionista, and proud of who she is. With affiliates growing the community and 3 years of evolution, Maartie now stands as a brand built by women, for women.</p>
         </div>
-        <div class="split-visual float-card" style="background: linear-gradient(145deg, #F6D9E8, #F483C420); border-radius: 2rem; display: flex; align-items: center; justify-content: center;">
-          <i class="fas fa-crown" style="font-size: 5rem; color:#E31684; opacity:0.7;"></i>
+        <div class="split-visual float-card brand-story-image-card" style="display: flex; align-items: center; justify-content: center; overflow: hidden; padding: 1.5rem; background: var(--color-glass);">
+          <img src="images/maartie_products.png" alt="Maartie Products" class="brand-story-img" style="width: 100%; height: 100%; object-fit: contain; border-radius: 1.5rem; filter: drop-shadow(0 15px 30px rgba(0,0,0,0.1));">
+          <div class="image-overlay-simple">
+            <span>Signature Basics</span>
+          </div>
         </div>
       </div>
     </div>
@@ -70,8 +73,11 @@
           <p class="text-lg leading-normal">Our vision is to become the trusted brand for affordable streetwear and elevated basics—clothing that empowers women to feel confident in every setting.</p>
           <p class="text-base leading-normal mt-md">From students in coffee shops and libraries to young adults building their careers, Maartie provides style that fits their lifestyle and inspires them to own their identity.</p>
         </div>
-        <div class="split-visual float-card" style="background: radial-gradient(circle, #F483C440, #EB6BAD20); display: flex; align-items: center; justify-content: center;">
-          <i class="fas fa-chart-line" style="font-size: 4rem; color:#E31684;"></i>
+        <div class="split-visual float-card vision-image-card" style="display: flex; align-items: center; justify-content: center; overflow: hidden; background: var(--color-glass); border: 2px solid rgba(227,22,132,0.4); border-radius: 2rem; padding: 0;">
+          <img src="images/vision_model.png" alt="Maartie Vision Model" class="vision-img" style="width: 100%; height: 100%; object-fit: cover; object-position: center top; transition: transform 0.6s var(--ease-fashion);">
+          <div class="image-overlay-simple">
+            <span>Our Vision</span>
+          </div>
         </div>
       </div>
     </div>
@@ -105,10 +111,70 @@
     </div>
   </section>
 
+  <!-- SLIDE 6 - THE LOOKBOOK -->
+  <section class="slide" id="slideLookbook">
+    <div class="parallax-bg" style="background-size: 80px 80px; opacity: 0.1;"></div>
+    <div class="content">
+      <h2 class="section-title reveal-text text-center" style="display: block; margin-bottom: 0.5rem; text-align: center; width: 100%;">The Maartie Lookbook</h2>
+      <p class="text-base text-center mb-lg reveal-text text-center" style="text-align: center; margin-bottom: var(--space-lg); width: 100%;">Explore our signature collections designed to inspire confidence and self-care.</p>
+      
+      <div class="lookbook-container">
+        <!-- Left Visual: Active Lookbook Image -->
+        <div class="lookbook-viewer float-card">
+          <div class="lookbook-img-frame">
+            <img id="lookbookMainImg" src="images/lana.png" alt="Lana Collection" class="lookbook-active-image">
+          </div>
+        </div>
+        
+        <!-- Right Details: Active Details Info -->
+        <div class="lookbook-details glass-card">
+          <span id="lookbookVibe" class="lookbook-badge">Romantic & Sweet</span>
+          <h3 id="lookbookTitle" class="gradient-text mt-sm">Lana Dress</h3>
+          <p id="lookbookDesc" class="text-body leading-normal mb-md" style="margin-bottom: var(--space-md); font-size: var(--text-base);">
+            Unleash your inner romantic with this flowy floral masterpiece. Featuring double-ruffle shoulder straps and a flattering sweetheart neckline, the Lana dress is your go-to for sunny dates and café afternoons.
+          </p>
+          <div class="lookbook-styling-tips" style="margin-bottom: var(--space-md);">
+            <h4 style="font-size: var(--text-sm); margin-bottom: var(--space-3xs); color: var(--color-primary);"><i class="fas fa-magic" style="margin-right: 0.5rem;"></i>Style Notes</h4>
+            <p id="lookbookNotes" class="text-sm italic" style="font-size: var(--text-sm); font-style: italic;">
+              Pairs perfectly with woven straw hats, strappy sandals, and a classic tote bag.
+            </p>
+          </div>
+          <a id="lookbookShopBtn" href="https://shopee.ph" target="_blank" class="cta-btn lookbook-cta" style="display: inline-block; text-decoration: none; text-align: center;">
+            <i class="fab fa-shopify" style="margin-right: 0.5rem;"></i> Shop the Look
+          </a>
+        </div>
+      </div>
+      
+      <!-- Bottom Selector Tabs -->
+      <div class="lookbook-tabs-wrapper reveal-text">
+        <div class="lookbook-tabs">
+          <button class="lookbook-tab active" data-collection="lana">
+            <i class="fas fa-heart"></i><span>Lana Dress</span>
+          </button>
+          <button class="lookbook-tab" data-collection="maren">
+            <i class="fas fa-leaf"></i><span>Maren Dress</span>
+          </button>
+          <button class="lookbook-tab" data-collection="maren_sleeveless">
+            <i class="fas fa-border-all"></i><span>Maren Classic</span>
+          </button>
+          <button class="lookbook-tab" data-collection="poppy">
+            <i class="fas fa-spa"></i><span>Poppy Dress</span>
+          </button>
+          <button class="lookbook-tab" data-collection="damon">
+            <i class="fas fa-fire"></i><span>Damon Set</span>
+          </button>
+          <button class="lookbook-tab" data-collection="jordyn">
+            <i class="fas fa-star"></i><span>Jordyn Short</span>
+          </button>
+          <button class="lookbook-tab" data-collection="jordyn_longsleeve">
+            <i class="fas fa-shirt"></i><span>Jordyn Long</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
 
-
-
-  <!-- SLIDE 6 - INTERACTIVE ROADMAP -->
+  <!-- SLIDE 7 - INTERACTIVE ROADMAP -->
   <section class="slide" id="slide6">
     <div class="content">
       <h2 class="section-title reveal-text text-center">Interactive Roadmap</h2>
@@ -134,9 +200,58 @@
     <div class="content">
       <h2 class="section-title reveal-text">If Maartie Were a Person…</h2>
       <div class="split-layout" style="align-items: stretch;">
-        <div class="split-visual glass-card" style="display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 2rem;">
-          <i class="fas fa-female" style="font-size: 5rem; color:#E31684;"></i>
-          <p class="text-lg font-bold mt-sm">Barbie reimagined for today's Filipina</p>
+        <div class="split-visual glass-card persona-visual-container" style="display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 1.5rem; background: var(--color-glass);">
+          <div class="persona-avatar-grid">
+            <div class="persona-avatar-card">
+              <div class="avatar-wrapper">
+                <img src="images/lana.png" class="avatar-img" alt="Lana Persona">
+              </div>
+              <span class="avatar-label">Lana</span>
+            </div>
+            <div class="persona-avatar-card">
+              <div class="avatar-wrapper">
+                <img src="images/maren.png" class="avatar-img" alt="Maren Persona">
+              </div>
+              <span class="avatar-label">Maren</span>
+            </div>
+            <div class="persona-avatar-card">
+              <div class="avatar-wrapper">
+                <img src="images/maren_sleeveless.png" class="avatar-img" alt="Maren Classic Persona">
+              </div>
+              <span class="avatar-label">Maren Classic</span>
+            </div>
+            <div class="persona-avatar-card">
+              <div class="avatar-wrapper">
+                <img src="images/poppy.png" class="avatar-img" alt="Poppy Persona">
+              </div>
+              <span class="avatar-label">Poppy</span>
+            </div>
+            <div class="persona-avatar-card">
+              <div class="avatar-wrapper">
+                <img src="images/damon.png" class="avatar-img" alt="Damon Persona">
+              </div>
+              <span class="avatar-label">Damon</span>
+            </div>
+            <div class="persona-avatar-card">
+              <div class="avatar-wrapper">
+                <img src="images/jordyn.png" class="avatar-img" alt="Jordyn Short Persona">
+              </div>
+              <span class="avatar-label">Jordyn Short</span>
+            </div>
+            <div class="persona-avatar-card">
+              <div class="avatar-wrapper">
+                <img src="images/jordyn_longsleeve.png" class="avatar-img" alt="Jordyn Long Persona">
+              </div>
+              <span class="avatar-label">Jordyn Long</span>
+            </div>
+            <div class="persona-avatar-card brand-logo-card">
+              <div class="avatar-wrapper logo-wrapper" style="background: linear-gradient(135deg, var(--color-primary), var(--color-secondary)); border-color: transparent;">
+                <i class="fas fa-crown" style="color: white; font-size: 1.8rem;"></i>
+              </div>
+              <span class="avatar-label" style="color: var(--color-secondary);">Maartie</span>
+            </div>
+          </div>
+          <p class="text-base font-bold mt-sm text-center" style="margin-top: 1rem; color: var(--color-primary); font-weight: 700;">Barbie reimagined for today's Filipina</p>
         </div>
         <div class="split-text">
           <div class="card-grid" style="gap: 1rem;">
